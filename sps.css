@@ -1,0 +1,139 @@
+header{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2vmin;
+    margin: 0px;
+    background-color: #222831;
+    padding-bottom: 2vmin;
+    color: #76ABAE;
+}
+body{
+    background-color: #EEEEEE;
+}
+.rounded{
+    border-radius: 50px;
+    
+}
+
+img{
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50px;
+    transition: smooth;
+    animation-delay: 1s;
+    margin-top: 5vmin;
+    opacity: 0.85;
+    filter: blur(0.03em);
+}
+img:hover{
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: smooth;
+    gap: 1.5em;
+    opacity: 1;
+    filter: blur(0em);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img:active{
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: smooth;
+    gap: 1.5em;
+    opacity: 0.85;
+    filter: blur(0em);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img_container{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.score{
+    align-items: center;
+    text-align: center;
+    padding-top: 5vmin;
+    margin: 0px;
+    font-size: 1.5rem;
+    padding-bottom: 0px;
+}
+
+.result{
+    align-items: center;
+    text-align: center;
+    padding-top: 2vmin;
+    margin: 0px;
+    padding-bottom: 2vmin;
+    justify-content: center;
+    display: flex;
+}
+
+.resultbox{
+    
+    align-items: center;
+    display: flex;
+    display: inline; /*to make the div adjust its width accordingly to its text*/
+    font-size: 1.5rem;
+    background-color: #222831;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 0.25rem;
+    color: #76ABAE;
+}
+
+.draw{
+    align-items: center;
+    display: flex;
+    display: inline; /*to make the div adjust its width accordingly to its text*/
+    font-size: 1.5rem;
+    background-color: #F9E897;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 0.25rem;
+    color: #b44773;
+}
+.winner{
+    align-items: center;
+    display: flex;
+    display: inline; /*to make the div adjust its width accordingly to its text*/
+    font-size: 1.5rem;
+    background-color: #89f37d;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 0.25rem;
+    color: #b44773;
+}
+.looser{
+    align-items: center;
+    display: flex;
+    display: inline; /*to make the div adjust its width accordingly to its text*/
+    font-size: 1.5rem;
+    background-color: #f00a0a;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 0.25rem;
+    color: #ffffff;
+}
+
+#uscore,#cscore{
+    font-size: 2rem;
+}
