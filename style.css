@@ -9,6 +9,20 @@ header{
     padding-bottom: 2vmin;
     color: #76ABAE;
 }
+
+.showscore{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.score_fixing{
+    padding: 4vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 body{
     background-color: #EEEEEE;
 }
@@ -29,6 +43,7 @@ img{
     opacity: 0.85;
     filter: blur(0.03em);
 }
+
 img:hover{
     float: left;
     width:  150px;

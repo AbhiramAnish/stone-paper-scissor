@@ -12,15 +12,23 @@
         <h1>Stone Paper Sisccor</h1>
     </header>
     <section>
+        <div class="score_fixing">
+            <input type="number" min="0" id="button"/>
+            <button onclick="clearscreen()">Fix Score!</button>
+            
+        </div>
+        <div class="showscore">
+        <h2 id="score"></h2>
+        </div>
         <div class="img_container">
-        <div id="stone" class="rounded">
-            <img src="stone.jpg">
+        <div id="stone" class="rounded" >
+            <img src="stone.jpg" class="stones">
         </div>
         <div id="paper" class="rounded">
-            <img src="paper.jpg">
+            <img src="paper.jpg" class="paper">
         </div>
         <div id="siscorr" class="rounded">
-            <img src="scissor.jpeg" alt="" >
+            <img src="scissor.jpeg" class="siscorr" >
         </div>
         </div>
         <div class="score">
