@@ -44,6 +44,46 @@ img{
     filter: blur(0.03em);
 }
 
+/* .stones{
+    pointer-events:;
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: smooth;
+    gap: 1.5em;
+    opacity: 1;
+    filter: blur(0em);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(248, 3, 3, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.432);
+}
+.siscorrs{
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: smooth;
+    gap: 1.5em;
+    opacity: 1;
+    filter: blur(0em);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(248, 3, 3, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.432);
+}
+.papers{
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: smooth;
+    gap: 1.5em;
+    opacity: 1;
+    filter: blur(0em);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(248, 3, 3, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.432);
+} */
 img:hover{
     float: left;
     width:  150px;

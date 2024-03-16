@@ -1,17 +1,24 @@
 let choices = document.querySelectorAll(".rounded");
 let result = document.querySelector(".resultbox");
+let stones = document.querySelector(".stones");
+let papers = document.querySelector(".papers");
+let scissors=document.querySelector(".siscorrs");
 let resultmsg = document.querySelector(".resultmsg");
 let uscore = document.querySelector("#uscore");
 let cscore = document.querySelector("#cscore");
 let scorefix = document.querySelector(".score_fixing");
 let sscore = document.querySelector("#score"); //showscore
 
+let gameOver=false;
 let userwin = true;
 let userscore = 0;
 let compscore = 0;
-let wscore;
+let wscore=0;
+let startGame=false;
+
 
 let clearscreen = () => {
+    startGame=true;
     wscore =document.getElementById("button").value;
     scorefix.style.visibility = "hidden";
     sscore.innerText = `${wscore} is the winning score.`;
@@ -21,7 +28,22 @@ let clearscreen = () => {
 const compchoice = () => {
     let options = ["stone", "paper", "siscorr"]; // Fixed typo here
     let randomindx = Math.floor(Math.random() * 3);
-    let cchoice = options[randomindx];
+    let cchoice = options[randomindx];  
+    if(cchoice=="stone"){
+        stones.style.boxShadow="0 4px 8px 0 rgba(248, 3, 3, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.432)"
+        papers.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        scissors.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    }   
+    else if(cchoice="paper"){
+        papers.style.boxShadow="0 4px 8px 0 rgba(248, 3, 3, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.432)"
+        stones.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        scissors.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    }   
+    else if(cchoice=="siscorr"){
+        scissors.style.boxShadow="0 4px 8px 0 rgba(248, 3, 3, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.432)"
+        stones.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        papers.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    }  
     return cchoice;
 };
 
@@ -61,13 +83,14 @@ let playgame = (uoption) => {
     } else if (uoption == "paper") {
         userwin = coption == "scissors" ? false : true;
         showwinner(userwin, uoption, coption,wscore);
-    } else if (uoption == "scissors") {
+    } else if (uoption == "siscorr") {
         userwin = coption == "stone" ? false : true;
         showwinner(userwin, uoption, coption,wscore);
     }
 };
 
 const gameover = () => {
+    gameOver=true;
     if (userscore > compscore) {
         sscore.innerText = `You are the winner`;
 
@@ -76,9 +99,22 @@ const gameover = () => {
     }
 };
 
-choices.forEach((choice) => {
-    choice.addEventListener("click", () => {
-        let uoption = choice.getAttribute("id");
+
+let handleClick = (event) => {
+    if (!gameOver) {
+        if(startGame){
+        let uoption = event.target.getAttribute("id");
         playgame(uoption);
-    });
+        }
+    }
+};
+
+choices.forEach(choice => {
+    choice.addEventListener("click", handleClick);
 });
+
+const removeEventListeners = () => {
+    choices.forEach(choice => {
+        choice.removeEventListener("click", handleClick);
+    });
+};
